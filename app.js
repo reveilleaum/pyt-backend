@@ -5,7 +5,7 @@ const app = express();
 
 const tripRoutes = require('./routes/trip');
 const activityRoutes = require('./routes/activity');
-const userRoutes = require('./routes/user');
+const authRoutes = require('./routes/auth');
 const path = require('path');
 
 
@@ -28,7 +28,7 @@ app.use(bodyParser.json());
 
 app.use('/api/trip', tripRoutes);
 app.use('/api/activity', activityRoutes);
-app.use('/api/auth', userRoutes);
+app.use('/api/auth', authRoutes);
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
 module.exports = app;
